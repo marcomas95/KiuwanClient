@@ -174,7 +174,8 @@ public class OperaActivity extends Activity {
         InputStream is = null;
         JSONObject json = null;
         try {
-            is = new URL(url).openStream();
+            is = new URL(url);
+            is.openStream();
             try{
                 BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
                 String jsonText = readAll(rd);
