@@ -10,9 +10,11 @@ import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-
+/**
+ * {@inheritDoc}
+ */
 public class ReaderActivity extends AppCompatActivity {
-    private Button scan_btn;
+    Button scan_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +44,7 @@ public class ReaderActivity extends AppCompatActivity {
             }
             else {
                 Intent i = new Intent(getApplicationContext(), OperaActivity.class);
-                i.putExtra("id" , result.getContents());
+                i.putExtra("id" , result.getContents().toString());
                 startActivity(i);
             }
         }
